@@ -1,0 +1,24 @@
+<head>
+	<title>qty-counter</title>
+</head>
+
+<body>
+</body>
+
+<template name="main">
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Item Watcher</h1>
+			<p>To see qtyRemaining attached to sku use 'get' at .../watchedItems/{sku}</p>
+			<p>To decrement qtyRemaining 'post' to .../watchedItems/decrement/{sku}</p>
+		</div>
+
+		{{#each watches}}
+		{{> watch}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="watch">
+	<p>{{sku}} has {{qtyRemaining}}</p>
+</template>
